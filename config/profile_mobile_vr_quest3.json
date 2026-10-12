@@ -1,0 +1,104 @@
+{
+  "profile_id": "mobile_vr_quest3",
+  "label": "Mobile VR - Quest 3",
+  "description": "Standalone Quest 3 (Android, mobile GPU, no Nanite). Tier budgets, texture/LOD groups and rule severities carried over from the TWD project; numbers are still placeholders (budgets_v01_tbd) pending a tech-art pass.",
+  "status": "budgets_v01_tbd",
+  "tiers": {
+    "architecture": {
+      "max_texture_resolution": 1024,
+      "max_triangles": 2500,
+      "max_material_slots": 3
+    },
+    "hero": {
+      "max_texture_resolution": 2048,
+      "max_triangles": 15000,
+      "max_material_slots": 2
+    },
+    "props": {
+      "max_texture_resolution": 1024,
+      "max_triangles": 7500,
+      "max_material_slots": 2
+    },
+    "background": {
+      "max_texture_resolution": 512,
+      "max_triangles": 2000,
+      "max_material_slots": 1
+    },
+    "utility": {
+      "max_texture_resolution": null,
+      "max_triangles": null,
+      "max_material_slots": null
+    }
+  },
+  "texture_groups": {
+    "architecture": "TEXTUREGROUP_PROJECT01",
+    "hero": "TEXTUREGROUP_PROJECT02",
+    "props": "TEXTUREGROUP_PROJECT03",
+    "background": "TEXTUREGROUP_PROJECT04",
+    "utility": null
+  },
+  "default_texture_groups": [
+    "TEXTUREGROUP_WORLD",
+    "TEXTUREGROUP_WORLD_NORMAL_MAP",
+    "TEXTUREGROUP_WORLD_SPECULAR"
+  ],
+  "lod_groups": {
+    "architecture": "Architecture",
+    "hero": "Hero",
+    "props": "Props",
+    "background": "Background",
+    "utility": null
+  },
+  "lod_generation_targets": {
+    "architecture": {
+      "target_lod_count": 4,
+      "poly_fractions": [
+        1.0,
+        0.5,
+        0.25,
+        0.1
+      ]
+    },
+    "hero": {
+      "target_lod_count": 4,
+      "poly_fractions": [
+        1.0,
+        0.65,
+        0.45,
+        0.25
+      ]
+    },
+    "props": {
+      "target_lod_count": 3,
+      "poly_fractions": [
+        1.0,
+        0.4,
+        0.1
+      ]
+    },
+    "background": {
+      "target_lod_count": 3,
+      "poly_fractions": [
+        0.75,
+        0.4,
+        0.1
+      ]
+    },
+    "utility": null
+  },
+  "rules": {
+    "nanite_enabled": "FAIL",
+    "complex_as_simple_collision": "FAIL",
+    "missing_lod": "WARN",
+    "missing_lod_triangle_threshold": 3000,
+    "srgb_on_normal_map": "FAIL",
+    "texture_group_unassigned": "WARN",
+    "resolution_over_budget": "WARN",
+    "resolution_over_budget_severe": "FAIL",
+    "triangle_count_over_budget": "WARN",
+    "triangle_count_over_budget_severe": "FAIL",
+    "severe_multiplier": 2.0,
+    "translucent_material": "WARN",
+    "two_sided_material": "WARN"
+  }
+}

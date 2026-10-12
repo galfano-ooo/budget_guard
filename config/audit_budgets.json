@@ -1,0 +1,120 @@
+{
+  "status": "budgets_v01_tbd",
+  "tag_key": "BudgetTier",
+  "default_tier": "background",
+  "taggable_classes": [
+    "Texture2D",
+    "TextureCube",
+    "StaticMesh",
+    "Material",
+    "MaterialInstanceConstant"
+  ],
+  "tag_rules_note": "Generic starter keywords for the bootstrap tagger: case-insensitive substrings of the asset path, checked in declared order (first match wins), 'hero' is never auto-assigned. Short keywords can false-positive - read the dry-run's UNMATCHED section and each tier's list before applying. A project should replace these with its own in <Project>/Saved/BudgetGuard/config.json (see examples/).",
+  "tag_rules": {
+    "architecture": [
+      "wall_",
+      "floor_",
+      "ceiling_",
+      "molding_",
+      "stairs",
+      "roof",
+      "doorframe",
+      "windowframe",
+      "architecture",
+      "building"
+    ],
+    "props": [
+      "props",
+      "furniture",
+      "sofa",
+      "chair",
+      "table",
+      "bed_",
+      "lamp",
+      "shelf"
+    ],
+    "background": [
+      "background",
+      "clutter",
+      "decor",
+      "foliage",
+      "books"
+    ],
+    "utility": [
+      "hdri",
+      "lightfunction",
+      "decal",
+      "materials/master",
+      "materials/functions"
+    ]
+  },
+  "excluded_path_fragments": [
+    "/Collections/",
+    "/Developers/"
+  ],
+  "extra_excluded_path_fragments": [],
+  "default_profile": "mobile_vr_quest3",
+  "disabled_rules": [],
+  "rule_catalog": [
+    {
+      "id": "resolution_over_budget",
+      "category": "Textures",
+      "label": "Texture resolution over budget",
+      "description": "Largest side above the tier's max_texture_resolution (WARN; FAIL past severe_multiplier).",
+      "extra": [
+        "resolution_over_budget_severe"
+      ]
+    },
+    {
+      "id": "srgb_on_normal_map",
+      "category": "Textures",
+      "label": "sRGB on normal map",
+      "description": "A normal map must not be sampled as sRGB."
+    },
+    {
+      "id": "texture_group_unassigned",
+      "category": "Textures",
+      "label": "Texture group unassigned",
+      "description": "Texture still on an engine-default group instead of its tier's group."
+    },
+    {
+      "id": "triangle_count_over_budget",
+      "category": "Meshes",
+      "label": "Triangles over budget",
+      "description": "LOD0 triangles above the tier's max_triangles (FAIL past severe_multiplier).",
+      "extra": [
+        "triangle_count_over_budget_severe"
+      ]
+    },
+    {
+      "id": "missing_lod",
+      "category": "Meshes",
+      "label": "Missing LOD",
+      "description": "Mesh above missing_lod_triangle_threshold with a single LOD."
+    },
+    {
+      "id": "nanite_enabled",
+      "category": "Meshes",
+      "label": "Nanite enabled",
+      "description": "Nanite is unsupported on Quest 3 standalone."
+    },
+    {
+      "id": "complex_as_simple_collision",
+      "category": "Meshes",
+      "label": "Complex-as-simple collision",
+      "description": "Collision uses render geometry instead of simple shapes."
+    },
+    {
+      "id": "translucent_material",
+      "category": "Materials",
+      "label": "Translucent material",
+      "description": "Translucency is overdraw-heavy on mobile VR."
+    },
+    {
+      "id": "two_sided_material",
+      "category": "Materials",
+      "label": "Two-sided material",
+      "description": "Two-sided doubles shading cost on mobile VR."
+    }
+  ]
+}

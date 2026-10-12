@@ -1,0 +1,33 @@
+{
+  "_about": "EXAMPLE per-project override. Copy to <YourProject>/Saved/BudgetGuard/config.json and edit. Only the keys listed here replace the defaults in audit_budgets.json: objects merge key by key, lists and scalars are replaced. This one tags a modular-house vendor pack by its folder names (tag_rules) and excludes two extra folders (extra_excluded_path_fragments). To change a budget, add e.g. \"tiers\": { \"props\": { \"max_triangles\": 6000 } } - only that one number changes.",
+
+  "extra_excluded_path_fragments": [
+    "/Enums/",
+    "/Blueprints_scripts/"
+  ],
+
+  "tag_rules": {
+    "architecture": [
+      "meshes_building", "meshes_doors", "wall_", "floor_", "ceiling_",
+      "molding_", "exterior_", "windowframe", "windowglass", "windowblinds",
+      "stairs_", "doors_", "roof", "wallpaper_", "wallpanel_", "kitchen_marble"
+    ],
+    "props": [
+      "furniture", "sofa", "beds", "bed_", "chairs", "kitchen_cabinets",
+      "bathroom_props", "bathtub", "toilet", "sink", "fireplace",
+      "lamps", "wardrobe", "bookshelf", "stove", "fridge", "tv",
+      "workdesk", "mirror", "washingmachine", "tables", "ceilingfan"
+    ],
+    "background": [
+      "books", "carpets", "clothes", "curtains", "electronics", "extras",
+      "girl_room_props", "interior_plants", "kitchen_supplies",
+      "office_props", "paintings", "small_table_props", "storage_props",
+      "basement_props", "food", "shower_curtain", "laundry_room_props",
+      "misc_prop_set", "pillows", "basement_woods_pipes"
+    ],
+    "utility": [
+      "hdri", "moss", "lightfunction", "materials/master",
+      "materials/functions", "decals", "multiuse"
+    ]
+  }
+}

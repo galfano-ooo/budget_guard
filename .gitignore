@@ -1,0 +1,33 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Node tooling (dashboard/)
+node_modules/
+
+# Generated audit output (the tool now writes to <Project>/Saved/BudgetGuard/;
+# exports/ is only the dashboard generator's default folder)
+exports/
+
+# Installer backups of the user's UE project files
+*.uproject.bak
+
+# Per-machine Claude Code settings
+.claude/settings.local.json
+
+# OS / editor
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+*.swp
+
+# Logs and scratch
+*.log
+*.tmp
+
+# Release build output
+releases/
